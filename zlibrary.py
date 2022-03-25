@@ -114,12 +114,11 @@ class Zlibrary:
 
             print("路径中共有{}文件，其中{}正在下载".format(len(file_list), len(file_dict)))
             print(file_dict.keys())
-            if len(file_list) <= 0:
-                break
+            if len(file_dict) == 0:
+                print("结束等待")
+                return True
             else:
                 time.sleep(30)
-
-        return True
 
     def run(self, labels):
         for label in labels:
